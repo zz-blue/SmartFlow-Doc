@@ -11,7 +11,7 @@ Please cite us if you find this framework useful!
 
 .. seealso::  
    
-   `Maochao Xiao, Francisco Alcántara-Ávila, Bernat Font, Marius Kurz, Di Zhou, Yuning Wang, Ting Zhu, Ricardo Vinuesa, Johan Larsson, and Sergio Pirozzoli, martFlow: An open-source framework for deep reinforcement learning in turbulence modeling, flow control and numerical algorithm development," presented at the 2nd European Fluid Dynamics Conference (EFDC2), Dublin, Ireland, 26–29 August 2025. <https://doi.org/10.1016/j.cpc.2025.109546>`_  
+   `Maochao Xiao, Francisco Alcántara-Ávila, Bernat Font, Marius Kurz, Di Zhou, Yuning Wang, Ting Zhu, Ricardo Vinuesa, Johan Larsson, and Sergio Pirozzoli, martFlow: An open-source framework for deep reinforcement learning in turbulence modeling, flow control and numerical algorithm development," presented at the 2nd European Fluid Dynamics Conference (EFDC2), Dublin, Ireland, 26–29 August 2025. <https://www.overleaf.com/read/jycvfjgqdpfm#91e56a>`_  
 
 
 .. toctree::

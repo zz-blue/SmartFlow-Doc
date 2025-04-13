@@ -2,7 +2,7 @@
 
 The documentation for the **CaLES** project is written in **reStructuredText** and is hosted on **Read the Docs**.
 
-You can view the full documentation for **SmartFlow** at the following link: https://cales-test.readthedocs.io/en/latest/
+You can view the full documentation for **SmartFlow** at the following link: https://smartflow-doc.readthedocs.io/en/latest/
 
 ## Building the Documentation on `Read the Docs`
 

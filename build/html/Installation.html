@@ -1,0 +1,227 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation &mdash; SmartFlow  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Run a case" href="Run_a_case.html" />
+    <link rel="prev" title="How it works" href="How_it_works.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SmartFlow
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="How_it_works.html">How it works</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">SmartSim and SmartRedis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Stable-Baselines3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smartflow">SmartFlow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">SmartRedis-MPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cfd-solver">CFD Solver</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Run_a_case.html">Run a case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Example.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Contributors.html">Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SmartFlow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Installation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
+<p>The following components are required to use the SmartFlow framework:</p>
+<ol class="arabic simple">
+<li><p>SmartSim and SmartRedis</p></li>
+<li><p>Stable-Baselines3</p></li>
+<li><p>SmartFlow</p></li>
+<li><p>SmartRedis-MPI</p></li>
+<li><p>CFD solver</p></li>
+</ol>
+<p>For comprehensive installation instructions, please refer to the official documentation for each component:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.craylabs.org/docs/installation_instructions/basic.html">SmartSim and SmartRedis</a></p></li>
+<li><p><a class="reference external" href="https://github.com/soaringxmc/smartredis-mpi">SmartRedis-MPI</a></p></li>
+<li><p><a class="reference external" href="https://stable-baselines3.readthedocs.io/en/master/guide/install.html">Stable-Baselines3</a></p></li>
+</ul>
+<p>If you plan to contribute advanced features to the framework, we recommend thoroughly reviewing both the
+<a class="reference external" href="https://www.craylabs.org/docs/overview.html">SmartSim Documentation</a> and
+<a class="reference external" href="https://stable-baselines3.readthedocs.io/en/master/">Stable-Baselines3 Documentation</a> documentation.</p>
+<p>Below is a quick installation guide for all components. Note that Python 3.9–3.11 is required for compatibility.
+We recommend starting with a fresh virtual environment:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>/path/to/smartflow/environment
+<span class="nb">source</span><span class="w"> </span>/path/to/smartflow/environment/bin/activate
+</pre></div>
+</div>
+<section id="id1">
+<h2>SmartSim and SmartRedis<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>SmartSim provides the infrastructure for launching and managing simulations, while SmartRedis provides client
+interfaces for interacting with the in-memory Redis database.</p>
+<p><strong>Python Installation</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install SmartSim</span>
+pip<span class="w"> </span>install<span class="w"> </span>smartsim
+<span class="c1"># Build SmartSim with CPU support and Dragon</span>
+smart<span class="w"> </span>build<span class="w"> </span>--device<span class="w"> </span>cpu<span class="w"> </span>--dragon
+
+<span class="c1"># Install SmartRedis Python client</span>
+pip<span class="w"> </span>install<span class="w"> </span>smartredis
+</pre></div>
+</div>
+<p><strong>C, C++, and Fortran Client Libraries</strong></p>
+<p>For compiled language applications, the SmartRedis client libraries need to be built from source.
+We currently use version 0.5.3 for compatibility.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The CFD solver, SmartRedis, and SmartRedis-MPI must be compiled with the same compiler to ensure proper linking.</p>
+</div>
+<p><strong>Using GCC Compilers</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/CrayLabs/SmartRedis<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>--branch<span class="o">=</span>v0.5.3<span class="w"> </span>smartredis
+<span class="nb">cd</span><span class="w"> </span>smartredis
+make<span class="w"> </span>lib-with-fortran<span class="w"> </span><span class="nv">CC</span><span class="o">=</span>gcc<span class="w"> </span><span class="nv">CXX</span><span class="o">=</span>g++<span class="w"> </span><span class="nv">FC</span><span class="o">=</span>gfortran
+</pre></div>
+</div>
+<p>After compilation, add the library path to your environment:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:/path/to/smartredis/lib
+<span class="c1"># Add this to your .bashrc or .bash_profile for persistence</span>
+</pre></div>
+</div>
+<p><strong>Using NVIDIA Compilers (for GPU-enabled applications)</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>smartredis
+make<span class="w"> </span>lib-with-fortran<span class="w"> </span><span class="nv">CC</span><span class="o">=</span>nvc<span class="w"> </span><span class="nv">CXX</span><span class="o">=</span>nvc++<span class="w"> </span><span class="nv">FC</span><span class="o">=</span>nvfortran
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>Stable-Baselines3<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>Stable-Baselines3 is a Python library that provides implementations of reinforcement learning algorithms.
+It can be installed with the following command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>stable-baselines3<span class="o">[</span>extra<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="smartflow">
+<h2>SmartFlow<a class="headerlink" href="#smartflow" title="Link to this heading"></a></h2>
+<p>SmartFlow is installed with the following commands:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>SmartFlow
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</pre></div>
+</div>
+<p>This will mark the current package as editable, so it can be modified and the changes will be automatically
+available to the Python environment.</p>
+</section>
+<section id="id3">
+<h2>SmartRedis-MPI<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>Before installing the CFD solver, build the SmartRedis-MPI library that will be linked by the MPI-based parallel CFD solver:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/soaringxmc/smartredis-mpi.git
+<span class="nb">cd</span><span class="w"> </span>smartredis-mpi
+</pre></div>
+</div>
+<p>Edit the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> to set the correct paths to your SmartRedis installation:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adjust the include and lib paths in the Makefile</span>
+make
+</pre></div>
+</div>
+<p>Add the library path to your environment:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:/path/to/smartredis-mpi/lib
+<span class="c1"># Add this to your .bashrc or .bash_profile for persistence</span>
+</pre></div>
+</div>
+</section>
+<section id="cfd-solver">
+<h2>CFD Solver<a class="headerlink" href="#cfd-solver" title="Link to this heading"></a></h2>
+<p>The advantage of SmartFlow is that it can be easily integrated with any CFD solver. Only several lines of code
+need to be added to the CFD solver to enable communication with the SmartFlow framework.</p>
+<p>As an example, we only added five lines of code to the <a class="reference external" href="https://github.com/CaNS-World/CaLES">CaLES</a> solver
+to enable its coupling with the SmartFlow framework.</p>
+<p>If you want to use CaLES as your CFD solver or simply test the workflow of the SmartFlow framework,
+please refer to the <a class="reference external" href="https://github.com/CaNS-World/CaLES">CaLES</a> for installation instructions.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="How_it_works.html" class="btn btn-neutral float-left" title="How it works" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Run_a_case.html" class="btn btn-neutral float-right" title="Run a case" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, SmartFlow contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

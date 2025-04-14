@@ -3,9 +3,6 @@ Acknowledgements
 
 SmartFlow has benefited from the expertise and support of many individuals in the computational fluid dynamics and high-performance computing communities.
 
-Research Collaborators
-----------------------------
-
 We are grateful for the valuable discussions with:
 
 - Francisco Alcántara Ávila  

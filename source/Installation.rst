@@ -98,6 +98,20 @@ SmartFlow is installed with the following commands:
 This will mark the current package as editable, so it can be modified and the changes will be automatically
 available to the Python environment.
 
+.. note::
+
+   The scripts in SmartFlow rely on additional Python packages that may not be listed in the default installation.
+   In particular, make sure the following libraries are installed:
+
+   - ``omegaconf``
+   - ``wandb``
+
+   You can install them with:
+
+   .. code-block:: sh
+
+      pip install omegaconf wandb
+      
 SmartRedis-MPI
 ----------------------------
 
@@ -133,3 +147,11 @@ to enable its coupling with the SmartFlow framework.
 
 If you want to use CaLES as your CFD solver or simply test the workflow of the SmartFlow framework,
 please refer to the `CaLES <https://github.com/CaNS-World/CaLES>`_ for installation instructions.
+
+.. note::
+
+   - **Branch Selection**: Make sure to use the ``smartflow branch``, not the main branch.
+   - **Build Configuration**: Ensure that the parameter ``PENCIL_AXIS`` is set to **3** in the ``build.conf`` file.
+
+
+

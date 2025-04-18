@@ -3,11 +3,11 @@ Installation
 
 The following components are required to use the SmartFlow framework:
 
-1. `SmartSim and SmartRedis <#smartsim-and-smartredis>`_
-2. `Stable-Baselines3 <#stable-baselines3>`_
-3. `SmartFlow <#smartflow>`_
-4. `SmartRedis-MPI <#smartredis-mpi>`_
-5. `CFD Solver <#cfd-solver>`_
+1. :ref:`SmartSim and SmartRedis <smartsim-and-smartredis>`
+2. :ref:`Stable-Baselines3 <stable-baselines3>`
+3. :ref:`SmartFlow <smartflow>`
+4. :ref:`SmartRedis-MPI <smartredis-mpi>`
+5. :ref:`CFD Solver <cfd-solver>`
 
 For comprehensive installation instructions, please refer to the official documentation for each component:
 

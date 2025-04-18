@@ -47,9 +47,9 @@
 <li class="toctree-l1"><a class="reference internal" href="How_it_works.html">How it works</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">SmartSim and SmartRedis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Stable-Baselines3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stablebaselines3">Stable-Baselines3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#smartflow">SmartFlow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">SmartRedis-MPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smartredismpi">SmartRedis-MPI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cfd-solver">CFD Solver</a></li>
 </ul>
 </li>
@@ -87,11 +87,11 @@
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
 <p>The following components are required to use the SmartFlow framework:</p>
 <ol class="arabic simple">
-<li><p>SmartSim and SmartRedis</p></li>
-<li><p>Stable-Baselines3</p></li>
-<li><p>SmartFlow</p></li>
-<li><p>SmartRedis-MPI</p></li>
-<li><p>CFD solver</p></li>
+<li><p><a class="reference internal" href="#id1"><span class="std std-ref">SmartSim and SmartRedis</span></a></p></li>
+<li><p><a class="reference internal" href="#stablebaselines3"><span class="std std-ref">Stable-Baselines3</span></a></p></li>
+<li><p><a class="reference internal" href="#smartflow"><span class="std std-ref">SmartFlow</span></a></p></li>
+<li><p><a class="reference internal" href="#smartredismpi"><span class="std std-ref">SmartRedis-MPI</span></a></p></li>
+<li><p><a class="reference internal" href="#cfd-solver"><span class="std std-ref">CFD Solver</span></a></p></li>
 </ol>
 <p>For comprehensive installation instructions, please refer to the official documentation for each component:</p>
 <ul class="simple">
@@ -109,7 +109,7 @@ We recommend starting with a fresh virtual environment:</p>
 </pre></div>
 </div>
 <section id="id1">
-<h2>SmartSim and SmartRedis<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<span id="id2"></span><h2>SmartSim and SmartRedis<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
 <p>SmartSim provides the infrastructure for launching and managing simulations, while SmartRedis provides client
 interfaces for interacting with the in-memory Redis database.</p>
 <p><strong>Python Installation</strong></p>
@@ -146,8 +146,8 @@ make<span class="w"> </span>lib-with-fortran<span class="w"> </span><span class=
 </pre></div>
 </div>
 </section>
-<section id="id2">
-<h2>Stable-Baselines3<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<section id="stablebaselines3">
+<span id="id3"></span><h2>Stable-Baselines3<a class="headerlink" href="#stablebaselines3" title="Link to this heading"></a></h2>
 <p>Stable-Baselines3 is a Python library that provides implementations of reinforcement learning algorithms.
 It can be installed with the following command:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>stable-baselines3<span class="o">[</span>extra<span class="o">]</span>
@@ -155,7 +155,7 @@ It can be installed with the following command:</p>
 </div>
 </section>
 <section id="smartflow">
-<h2>SmartFlow<a class="headerlink" href="#smartflow" title="Link to this heading"></a></h2>
+<span id="id4"></span><h2>SmartFlow<a class="headerlink" href="#smartflow" title="Link to this heading"></a></h2>
 <p>SmartFlow is installed with the following commands:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>SmartFlow
 pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
@@ -163,9 +163,22 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 </div>
 <p>This will mark the current package as editable, so it can be modified and the changes will be automatically
 available to the Python environment.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The scripts in SmartFlow rely on additional Python packages that may not be listed in the default installation.
+In particular, make sure the following libraries are installed:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">omegaconf</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wandb</span></code></p></li>
+</ul>
+<p>You can install them with:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>omegaconf<span class="w"> </span>wandb
+</pre></div>
+</div>
+</div>
 </section>
-<section id="id3">
-<h2>SmartRedis-MPI<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<section id="smartredismpi">
+<span id="id5"></span><h2>SmartRedis-MPI<a class="headerlink" href="#smartredismpi" title="Link to this heading"></a></h2>
 <p>Before installing the CFD solver, build the SmartRedis-MPI library that will be linked by the MPI-based parallel CFD solver:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/soaringxmc/smartredis-mpi.git
 <span class="nb">cd</span><span class="w"> </span>smartredis-mpi
@@ -183,13 +196,20 @@ make
 </div>
 </section>
 <section id="cfd-solver">
-<h2>CFD Solver<a class="headerlink" href="#cfd-solver" title="Link to this heading"></a></h2>
+<span id="id6"></span><h2>CFD Solver<a class="headerlink" href="#cfd-solver" title="Link to this heading"></a></h2>
 <p>The advantage of SmartFlow is that it can be easily integrated with any CFD solver. Only several lines of code
 need to be added to the CFD solver to enable communication with the SmartFlow framework.</p>
 <p>As an example, we only added five lines of code to the <a class="reference external" href="https://github.com/CaNS-World/CaLES">CaLES</a> solver
 to enable its coupling with the SmartFlow framework.</p>
 <p>If you want to use CaLES as your CFD solver or simply test the workflow of the SmartFlow framework,
 please refer to the <a class="reference external" href="https://github.com/CaNS-World/CaLES">CaLES</a> for installation instructions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><strong>Branch Selection</strong>: Make sure to use the <code class="docutils literal notranslate"><span class="pre">smartflow</span> <span class="pre">branch</span></code>, not the main branch.</p></li>
+<li><p><strong>Build Configuration</strong>: Ensure that the parameter <code class="docutils literal notranslate"><span class="pre">PENCIL_AXIS</span></code> is set to <strong>3</strong> in the <code class="docutils literal notranslate"><span class="pre">build.conf</span></code> file.</p></li>
+</ul>
+</div>
 </section>
 </section>
 

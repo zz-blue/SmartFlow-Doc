@@ -4,9 +4,9 @@ Installation
 The following components are required to use the SmartFlow framework:
 
 1. :ref:`SmartSim and SmartRedis <smartsim-and-smartredis>`
-2. :ref:`Stable-Baselines3 <stable-baselines3>`
+2. :ref:`Stable-Baselines3 <stablebaselines3>`
 3. :ref:`SmartFlow <smartflow>`
-4. :ref:`SmartRedis-MPI <smartredis-mpi>`
+4. :ref:`SmartRedis-MPI <smartredismpi>`
 5. :ref:`CFD Solver <cfd-solver>`
 
 For comprehensive installation instructions, please refer to the official documentation for each component:
@@ -77,7 +77,9 @@ After compilation, add the library path to your environment:
    cd smartredis
    make lib-with-fortran CC=nvc CXX=nvc++ FC=nvfortran
 
-.. _stable-baselines3:
+
+
+.. _stablebaselines3:
 
 Stable-Baselines3
 ----------------------------
@@ -118,7 +120,9 @@ available to the Python environment.
 
       pip install omegaconf wandb
 
-.. _smartredis-mpi:
+
+
+.. _smartredismpi:
 
 SmartRedis-MPI
 ----------------------------

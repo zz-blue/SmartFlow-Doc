@@ -24,3 +24,4 @@ Please cite us if you find this framework useful!
    Example
    Contributors
    Acknowledgements
+   Bibliography

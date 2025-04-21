@@ -175,4 +175,28 @@ please refer to the `CaLES <https://github.com/CaNS-World/CaLES>`_ for installat
    - **Build Configuration**: Ensure that the parameter ``PENCIL_AXIS`` is set to **3** in the ``build.conf`` file.
 
 
+Tested Clusters
+----------------------------
 
+SmartFlow has been tested and verified on various HPC clusters in Europe and China. The following table summarizes the hardware environment and job scheduling systems used during deployment.
+
+.. list-table:: HPC Clusters Tested with SmartFlow
+   :widths: 22 28 28 28
+   :header-rows: 1
+
+   * - Country
+     - Cluster
+     - Partition
+     - Scheduler
+   * - Italy
+     - CINECA
+     - Booster
+     - Slurm
+   * - China
+     - BSCC (Beijing Super Cloud Center)
+     - N32EA14P (gnuuser255)
+     - Slurm
+   * - China
+     - BSCC (Beijing Super Cloud Center)
+     - BSCC-A (sc51302)
+     - Slurm

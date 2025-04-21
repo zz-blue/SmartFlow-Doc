@@ -47,6 +47,7 @@
 <li class="toctree-l1"><a class="reference internal" href="How_it_works.html">How it works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Run a case</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tested-clusters">Tested Clusters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-on-a-standalone-machine">Running on a standalone machine</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-with-slurm-on-a-cpu-cluster">Running with SLURM on a CPU cluster</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-with-slurm-on-a-gpu-accelerated-cluster">Running with SLURM on a GPU-accelerated cluster</a></li>
@@ -55,6 +56,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Example.html">Example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Contributors.html">Contributors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Bibliography.html">Bibliography</a></li>
 </ul>
 
         </div>
@@ -83,6 +85,48 @@
              
   <section id="run-a-case">
 <h1>Run a case<a class="headerlink" href="#run-a-case" title="Link to this heading"></a></h1>
+<section id="tested-clusters">
+<h2>Tested Clusters<a class="headerlink" href="#tested-clusters" title="Link to this heading"></a></h2>
+<p>SmartFlow has been tested and verified on various HPC clusters in Europe and China. The following table summarizes the hardware environment and job scheduling systems used during deployment.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">HPC Clusters Tested with SmartFlow</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Country</p></th>
+<th class="head"><p>Cluster</p></th>
+<th class="head"><p>Partition</p></th>
+<th class="head"><p>Scheduler</p></th>
+<th class="head"><p>Network Interface</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Italy</p></td>
+<td><p>CINECA</p></td>
+<td><p>Booster</p></td>
+<td><p>Slurm</p></td>
+<td><p>IB0</p></td>
+</tr>
+<tr class="row-odd"><td><p>China</p></td>
+<td><p>BSCC (Beijing Super Cloud Center)</p></td>
+<td><p>N32EA14P (gnuuser255)</p></td>
+<td><p>Slurm</p></td>
+<td><p>IB0</p></td>
+</tr>
+<tr class="row-even"><td><p>China</p></td>
+<td><p>BSCC (Beijing Super Cloud Center)</p></td>
+<td><p>BSCC-A (sc51302)</p></td>
+<td><p>Slurm</p></td>
+<td><p>IB0</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="running-on-a-standalone-machine">
 <h2>Running on a standalone machine<a class="headerlink" href="#running-on-a-standalone-machine" title="Link to this heading"></a></h2>
 <p>To run a case on a standalone machine, we can use:</p>

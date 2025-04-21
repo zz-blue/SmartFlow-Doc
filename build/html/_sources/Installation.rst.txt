@@ -96,6 +96,8 @@ It can be installed with the following command:
 SmartFlow
 ----------------------------
 
+We recommand to use `SmartFlow-v1.0.1 <https://github.com/soaringxmc/SmartFlow/releases/tag/v1.0.1>`_ as a stable version.
+
 SmartFlow is installed with the following commands:
 
 .. code-block:: sh
@@ -160,11 +162,7 @@ need to be added to the CFD solver to enable communication with the SmartFlow fr
 As an example, we only added five lines of code to the `CaLES <https://github.com/CaNS-World/CaLES>`_ solver
 to enable its coupling with the SmartFlow framework.
 
-To use SmartFlow v1.0.0 with CaLES, please ensure you are using the compatible version:
-
-- `SmartFlow-v1.0.0 <https://github.com/soaringxmc/SmartFlow/releases/tag/v1.0.0>`_
-
-- `CaLES-v2.0.0-smartflow <https://github.com/CaNS-World/CaLES/releases/tag/v2.0.0-smartflow>`_
+To use SmartFlow v1.0.1 with CaLES, please ensure you are using the compatible version: `CaLES-v2.0.0-smartflow <https://github.com/CaNS-World/CaLES/releases/tag/v2.0.0-smartflow>`_
 
 If you want to use CaLES as your CFD solver or simply test the workflow of the SmartFlow framework,
 please refer to the `CaLES <https://github.com/CaNS-World/CaLES>`_ for installation instructions.
@@ -175,28 +173,3 @@ please refer to the `CaLES <https://github.com/CaNS-World/CaLES>`_ for installat
    - **Build Configuration**: Ensure that the parameter ``PENCIL_AXIS`` is set to **3** in the ``build.conf`` file.
 
 
-Tested Clusters
-----------------------------
-
-SmartFlow has been tested and verified on various HPC clusters in Europe and China. The following table summarizes the hardware environment and job scheduling systems used during deployment.
-
-.. list-table:: HPC Clusters Tested with SmartFlow
-   :widths: 22 28 28 28
-   :header-rows: 1
-
-   * - Country
-     - Cluster
-     - Partition
-     - Scheduler
-   * - Italy
-     - CINECA
-     - Booster
-     - Slurm
-   * - China
-     - BSCC (Beijing Super Cloud Center)
-     - N32EA14P (gnuuser255)
-     - Slurm
-   * - China
-     - BSCC (Beijing Super Cloud Center)
-     - BSCC-A (sc51302)
-     - Slurm

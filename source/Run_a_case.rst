@@ -1,6 +1,37 @@
 Run a case
 ============================
 
+Tested Clusters
+----------------------------
+
+SmartFlow has been tested and verified on various HPC clusters in Europe and China. The following table summarizes the hardware environment and job scheduling systems used during deployment.
+
+.. list-table:: HPC Clusters Tested with SmartFlow
+   :widths: 15 25 20 20 20
+   :header-rows: 1
+
+   * - Country
+     - Cluster
+     - Partition
+     - Scheduler
+     - Network Interface 
+   * - Italy
+     - CINECA
+     - Booster
+     - Slurm
+     - IB0
+   * - China
+     - BSCC (Beijing Super Cloud Center)
+     - N32EA14P (gnuuser255)
+     - Slurm
+     - IB0
+   * - China
+     - BSCC (Beijing Super Cloud Center)
+     - BSCC-A (sc51302)
+     - Slurm
+     - IB0
+
+
 Running on a standalone machine
 -------------------------------
 

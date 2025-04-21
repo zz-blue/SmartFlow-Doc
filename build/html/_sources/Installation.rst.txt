@@ -160,6 +160,12 @@ need to be added to the CFD solver to enable communication with the SmartFlow fr
 As an example, we only added five lines of code to the `CaLES <https://github.com/CaNS-World/CaLES>`_ solver
 to enable its coupling with the SmartFlow framework.
 
+To use SmartFlow v1.0.0 with CaLES, please ensure you are using the compatible version:
+
+- `SmartFlow-v1.0.0 <https://github.com/soaringxmc/SmartFlow/releases/tag/v1.0.0>`_
+
+- `CaLES-v2.0.0-smartflow <https://github.com/CaNS-World/CaLES/releases/tag/v2.0.0-smartflow>`_
+
 If you want to use CaLES as your CFD solver or simply test the workflow of the SmartFlow framework,
 please refer to the `CaLES <https://github.com/CaNS-World/CaLES>`_ for installation instructions.
 

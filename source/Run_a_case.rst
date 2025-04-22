@@ -19,17 +19,17 @@ SmartFlow has been tested and verified on various HPC clusters in Europe and Chi
      - CINECA
      - Booster
      - Slurm
-     - IB0
+     - ib0
    * - China
      - BSCC (Beijing Super Cloud Center)
-     - N32EA14P (gnuuser255)
+     - N32EA14P
      - Slurm
-     - IB0
+     - ib0
    * - China
      - BSCC (Beijing Super Cloud Center)
-     - BSCC-A (sc51302)
+     - BSCC-A
      - Slurm
-     - IB0
+     - ib0
 
 
 Running on a standalone machine

@@ -77,7 +77,49 @@ After compilation, add the library path to your environment:
    cd smartredis
    make lib-with-fortran CC=nvc CXX=nvc++ FC=nvfortran
 
+**Installation Notes and Verification**
 
+The command ``smart build --device cpu --dragon`` not only builds SmartSim with CPU and Dragon support,
+but also installs and configures ``RedisAI``, enabling machine learning model execution within Redis.
+
+After the installation, you can verify the setup using the following command:
+
+.. code-block:: sh
+
+   smart info
+
+If the installation is successful, you should see output similar to the following:
+
+.. code-block:: text
+
+   Smart Python Packages:
+   ╒════════════╤═══════════╕
+   │ Name       │ Version   │
+   ╞════════════╪═══════════╡
+   │ SmartSim   │ 0.7.0     │
+   │ SmartRedis │ 0.5.3     │
+   ╘════════════╧═══════════╛
+
+   Orchestrator Configuration:
+   ╒═══════════╤═════════════════════════════════════════════════════════════════════════════════════════════╕
+   │ Installed │ REDIS                                                                                       │
+   │ Location  │ /smartsod2d/lib/python3.10/site-packages/smartsim/_core/bin/redis-cli │
+   ╘═══════════╧═════════════════════════════════════════════════════════════════════════════════════════════╛
+
+   Redis AI Configuration:
+   ╒══════════╤══════════════════════════════════════════════════════════════════════════════════════════════╕
+   │ Status   │ Installed                                                                                    │
+   │ Location │ /smartsod2d/lib/python3.10/site-packages/smartsim/_core/lib/redisai.so │
+   ╘══════════╧══════════════════════════════════════════════════════════════════════════════════════════════╛
+
+   Machine Learning Backends:
+   ╒════════════╤═════════════════════╤══════════════════╕
+   │ Name       │ Backend Available   │ Python Package   │
+   ╞════════════╪═════════════════════╪══════════════════╡
+   │ Tensorflow │ True                │ 2.15.0           │
+   │ Torch      │ True               │ 2.6.0            │
+   │ ONNX       │ False               │ Not Installed    │
+   ╘════════════╧═════════════════════╧══════════════════╛
 
 .. _stablebaselines3:
 

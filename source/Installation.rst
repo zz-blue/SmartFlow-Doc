@@ -51,9 +51,7 @@ interfaces for interacting with the in-memory Redis database.
 
 For compiled language applications, the SmartRedis client libraries need to be built from source.
 We currently use version 0.5.3 for compatibility.
-
-.. note::
-   The CFD solver, SmartRedis, and SmartRedis-MPI must be compiled with the same compiler to ensure proper linking.
+   
 
 **Using GCC Compilers**
 
@@ -78,6 +76,8 @@ After compilation, add the library path to your environment:
    make lib-with-fortran CC=nvc CXX=nvc++ FC=nvfortran
 
 **Installation Notes and Verification**
+
+The CFD solver, SmartRedis, and SmartRedis-MPI **must** be compiled with the same compiler to ensure proper linking.
 
 The command ``smart build --device cpu --dragon`` not only builds SmartSim with CPU and Dragon support,
 but also installs and configures ``RedisAI``, enabling machine learning model execution within Redis.
@@ -117,7 +117,7 @@ If the installation is successful, you should see output similar to the followin
    │ Name       │ Backend Available   │ Python Package   │
    ╞════════════╪═════════════════════╪══════════════════╡
    │ Tensorflow │ True                │ 2.15.0           │
-   │ Torch      │ True               │ 2.6.0            │
+   │ Torch      │ True                │ 2.6.0            │
    │ ONNX       │ False               │ Not Installed    │
    ╘════════════╧═════════════════════╧══════════════════╛
 
@@ -150,20 +150,19 @@ SmartFlow is installed with the following commands:
 This will mark the current package as editable, so it can be modified and the changes will be automatically
 available to the Python environment.
 
-.. note::
+**Scripts Installation**
 
-   The scripts in SmartFlow rely on additional Python packages that may not be listed in the default installation.
-   In particular, make sure the following libraries are installed:
+The scripts in SmartFlow rely on additional Python packages that may not be listed in the default installation.
+In particular, make sure the following libraries are installed:
 
-   - ``omegaconf``
-   - ``wandb``
+- ``omegaconf``
+- ``wandb``
 
-   You can install them with:
+You can install them with:
 
-   .. code-block:: sh
+.. code-block:: sh
 
-      pip install omegaconf wandb
-
+   pip install omegaconf wandb
 
 
 .. _smartredismpi:
@@ -209,9 +208,9 @@ To use SmartFlow v1.0.1 with CaLES, please ensure you are using the compatible v
 If you want to use CaLES as your CFD solver or simply test the workflow of the SmartFlow framework,
 please refer to the `CaLES <https://github.com/CaNS-World/CaLES>`_ for installation instructions.
 
-.. note::
+**Compilation Options**
 
-   - **Branch Selection**: Make sure to use the ``smartflow branch``, not the main branch.
-   - **Build Configuration**: Ensure that the parameter ``PENCIL_AXIS`` is set to **3** in the ``build.conf`` file.
+- **Branch Selection**: Make sure to use the ``smartflow branch``, not the main branch.
+- **Build Configuration**: Ensure that the parameter ``PENCIL_AXIS`` is set to **3** in the ``build.conf`` file.
 
 

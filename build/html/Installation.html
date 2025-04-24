@@ -126,10 +126,6 @@ pip<span class="w"> </span>install<span class="w"> </span>smartredis
 <p><strong>C, C++, and Fortran Client Libraries</strong></p>
 <p>For compiled language applications, the SmartRedis client libraries need to be built from source.
 We currently use version 0.5.3 for compatibility.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The CFD solver, SmartRedis, and SmartRedis-MPI must be compiled with the same compiler to ensure proper linking.</p>
-</div>
 <p><strong>Using GCC Compilers</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/CrayLabs/SmartRedis<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>--branch<span class="o">=</span>v0.5.3<span class="w"> </span>smartredis
 <span class="nb">cd</span><span class="w"> </span>smartredis
@@ -144,6 +140,45 @@ make<span class="w"> </span>lib-with-fortran<span class="w"> </span><span class=
 <p><strong>Using NVIDIA Compilers (for GPU-enabled applications)</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>smartredis
 make<span class="w"> </span>lib-with-fortran<span class="w"> </span><span class="nv">CC</span><span class="o">=</span>nvc<span class="w"> </span><span class="nv">CXX</span><span class="o">=</span>nvc++<span class="w"> </span><span class="nv">FC</span><span class="o">=</span>nvfortran
+</pre></div>
+</div>
+<p><strong>Installation Notes and Verification</strong></p>
+<p>The CFD solver, SmartRedis, and SmartRedis-MPI <strong>must</strong> be compiled with the same compiler to ensure proper linking.</p>
+<p>The command <code class="docutils literal notranslate"><span class="pre">smart</span> <span class="pre">build</span> <span class="pre">--device</span> <span class="pre">cpu</span> <span class="pre">--dragon</span></code> not only builds SmartSim with CPU and Dragon support,
+but also installs and configures <code class="docutils literal notranslate"><span class="pre">RedisAI</span></code>, enabling machine learning model execution within Redis.</p>
+<p>After the installation, you can verify the setup using the following command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>smart<span class="w"> </span>info
+</pre></div>
+</div>
+<p>If the installation is successful, you should see output similar to the following:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Smart Python Packages:
+╒════════════╤═══════════╕
+│ Name       │ Version   │
+╞════════════╪═══════════╡
+│ SmartSim   │ 0.7.0     │
+│ SmartRedis │ 0.5.3     │
+╘════════════╧═══════════╛
+
+Orchestrator Configuration:
+╒═══════════╤═════════════════════════════════════════════════════════════════════════════════════════════╕
+│ Installed │ REDIS                                                                                       │
+│ Location  │ /smartsod2d/lib/python3.10/site-packages/smartsim/_core/bin/redis-cli │
+╘═══════════╧═════════════════════════════════════════════════════════════════════════════════════════════╛
+
+Redis AI Configuration:
+╒══════════╤══════════════════════════════════════════════════════════════════════════════════════════════╕
+│ Status   │ Installed                                                                                    │
+│ Location │ /smartsod2d/lib/python3.10/site-packages/smartsim/_core/lib/redisai.so │
+╘══════════╧══════════════════════════════════════════════════════════════════════════════════════════════╛
+
+Machine Learning Backends:
+╒════════════╤═════════════════════╤══════════════════╕
+│ Name       │ Backend Available   │ Python Package   │
+╞════════════╪═════════════════════╪══════════════════╡
+│ Tensorflow │ True                │ 2.15.0           │
+│ Torch      │ True                │ 2.6.0            │
+│ ONNX       │ False               │ Not Installed    │
+╘════════════╧═════════════════════╧══════════════════╛
 </pre></div>
 </div>
 </section>
@@ -165,8 +200,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 </div>
 <p>This will mark the current package as editable, so it can be modified and the changes will be automatically
 available to the Python environment.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<p><strong>Scripts Installation</strong></p>
 <p>The scripts in SmartFlow rely on additional Python packages that may not be listed in the default installation.
 In particular, make sure the following libraries are installed:</p>
 <ul class="simple">
@@ -176,7 +210,6 @@ In particular, make sure the following libraries are installed:</p>
 <p>You can install them with:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>omegaconf<span class="w"> </span>wandb
 </pre></div>
-</div>
 </div>
 </section>
 <section id="smartredismpi">
@@ -206,13 +239,11 @@ to enable its coupling with the SmartFlow framework.</p>
 <p>To use SmartFlow v1.0.1 with CaLES, please ensure you are using the compatible version: <a class="reference external" href="https://github.com/CaNS-World/CaLES/releases/tag/v2.0.0-smartflow">CaLES-v2.0.0-smartflow</a></p>
 <p>If you want to use CaLES as your CFD solver or simply test the workflow of the SmartFlow framework,
 please refer to the <a class="reference external" href="https://github.com/CaNS-World/CaLES">CaLES</a> for installation instructions.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<p><strong>Compilation Options</strong></p>
 <ul class="simple">
 <li><p><strong>Branch Selection</strong>: Make sure to use the <code class="docutils literal notranslate"><span class="pre">smartflow</span> <span class="pre">branch</span></code>, not the main branch.</p></li>
 <li><p><strong>Build Configuration</strong>: Ensure that the parameter <code class="docutils literal notranslate"><span class="pre">PENCIL_AXIS</span></code> is set to <strong>3</strong> in the <code class="docutils literal notranslate"><span class="pre">build.conf</span></code> file.</p></li>
 </ul>
-</div>
 </section>
 </section>
 

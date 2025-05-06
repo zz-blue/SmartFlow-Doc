@@ -27,6 +27,11 @@ We recommend starting with a fresh virtual environment:
    python -m venv /path/to/smartflow/environment
    source /path/to/smartflow/environment/bin/activate
 
+.. note::
+
+   SmartFlow fully supports **OpenMPI** by default. Using other MPI implementations may require extra setup or tuning.
+
+
 .. _smartsim-and-smartredis:
 
 SmartSim and SmartRedis
@@ -46,6 +51,16 @@ interfaces for interacting with the in-memory Redis database.
 
    # Install SmartRedis Python client
    pip install smartredis
+
+.. note::
+
+   The ``--dragon`` option is not required for building SmartSim with CPU support. 
+   The following command also works:
+
+   .. code-block:: sh
+
+      smart build --device cpu
+
 
 **C, C++, and Fortran Client Libraries**
 
@@ -101,16 +116,16 @@ If the installation is successful, you should see output similar to the followin
    ╘════════════╧═══════════╛
 
    Orchestrator Configuration:
-   ╒═══════════╤═════════════════════════════════════════════════════════════════════════════════════════════╕
-   │ Installed │ REDIS                                                                                       │
+   ╒═══════════╤═════════════════════════════════════════════════════════════════════════════════════╕
+   │ Installed │ REDIS                                                                               │
    │ Location  │ /smartsod2d/lib/python3.10/site-packages/smartsim/_core/bin/redis-cli │
-   ╘═══════════╧═════════════════════════════════════════════════════════════════════════════════════════════╛
+   ╘═══════════╧═════════════════════════════════════════════════════════════════════════════════════╛
 
    Redis AI Configuration:
-   ╒══════════╤══════════════════════════════════════════════════════════════════════════════════════════════╕
-   │ Status   │ Installed                                                                                    │
+   ╒══════════╤══════════════════════════════════════════════════════════════════════════════════════╕
+   │ Status   │ Installed                                                                            │
    │ Location │ /smartsod2d/lib/python3.10/site-packages/smartsim/_core/lib/redisai.so │
-   ╘══════════╧══════════════════════════════════════════════════════════════════════════════════════════════╛
+   ╘══════════╧══════════════════════════════════════════════════════════════════════════════════════╛
 
    Machine Learning Backends:
    ╒════════════╤═════════════════════╤══════════════════╕
@@ -213,4 +228,30 @@ please refer to the `CaLES <https://github.com/CaNS-World/CaLES>`_ for installat
 - **Branch Selection**: Make sure to use the ``smartflow branch``, not the main branch.
 - **Build Configuration**: Ensure that the parameter ``PENCIL_AXIS`` is set to **3** in the ``build.conf`` file.
 
+We suggest presenting the CFD solvers coupled to SmartFlow in the following table:
+
+.. list-table:: CFD Solvers Coupled with SmartFlow
+   :widths: 25 25 25 25
+   :header-rows: 1
+
+   * - Solver
+     - Status
+     - Device
+     - Numerical Method
+   * - CaLES
+     - ✅ Coupled
+     - CPU/GPU
+     - Finite Difference
+   * - SOD2D
+     - ✅ Coupled
+     - CPU/GPU
+     - Spectral Element
+   * - FLEXI
+     - 🔄 In progress
+     - CPU
+     - Discontinuous Galerkin
+   * - HORSES3D
+     - 🔄 In progress
+     - CPU
+     - Discontinuous Galerkin
 

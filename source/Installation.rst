@@ -231,7 +231,7 @@ please refer to the `CaLES <https://github.com/CaNS-World/CaLES>`_ for installat
 We suggest presenting the CFD solvers coupled to SmartFlow in the following table:
 
 .. list-table:: CFD Solvers Coupled with SmartFlow
-   :widths: 20 15 20 30
+   :widths: 25 25 25 25
    :header-rows: 1
 
    * - Solver

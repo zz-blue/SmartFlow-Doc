@@ -235,23 +235,22 @@ We suggest presenting the CFD solvers coupled to SmartFlow in the following tabl
    :header-rows: 1
 
    * - Solver
-     - Status
-     - Device
+     - Coupling Status
+     - Device Support
      - Numerical Method
    * - CaLES
-     - ✅ Coupled
+     - Coupled
      - CPU/GPU
      - Finite Difference
    * - SOD2D
-     - ✅ Coupled
+     - Coupled
      - CPU/GPU
      - Spectral Element
    * - FLEXI
-     - 🔄 In progress
+     - In progress
      - CPU
      - Discontinuous Galerkin
    * - HORSES3D
-     - 🔄 In progress
+     - In progress
      - CPU
      - Discontinuous Galerkin
-

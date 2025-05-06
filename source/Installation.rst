@@ -29,7 +29,7 @@ We recommend starting with a fresh virtual environment:
 
 .. note::
 
-   SmartFlow fully supports OpenMPI by default. Using other MPI implementations may require extra setup or tuning.
+   SmartFlow fully supports **OpenMPI** by default. Using other MPI implementations may require extra setup or tuning.
 
 
 .. _smartsim-and-smartredis:
@@ -230,17 +230,28 @@ please refer to the `CaLES <https://github.com/CaNS-World/CaLES>`_ for installat
 
 We suggest presenting the CFD solvers coupled to SmartFlow in the following table:
 
-+-------------+--------+--------+------------------+--------------------------+
-| Solver      | Status | Device | Numerical Method | Notes                    |
-+=============+========+========+==================+==========================+
-| CaLES       | ✅     | CPU/GPU| Finite Difference|                          |
-+-------------+--------+--------+------------------+--------------------------+
-| SOD2D       | ✅     | CPU/GPU| Spectral Element |                          |
-+-------------+--------+--------+------------------+--------------------------+
-| FLEXI       | 🔄     | CPU    | Discontinuous Galerkin | In progress       |
-+-------------+--------+--------+------------------+--------------------------+
-| HORSES3D    | 🔄     | CPU    | Discontinuous Galerkin | In progress       |
-+-------------+--------+--------+------------------+--------------------------+
+.. list-table:: CFD Solvers Coupled with SmartFlow
+   :widths: 20 15 20 30
+   :header-rows: 1
 
-✅ : Coupled  
-🔄 : In progress
+   * - Solver
+     - Status
+     - Device
+     - Numerical Method
+   * - CaLES
+     - ✅ Coupled
+     - CPU/GPU
+     - Finite Difference
+   * - SOD2D
+     - ✅ Coupled
+     - CPU/GPU
+     - Spectral Element
+   * - FLEXI
+     - 🔄 In progress
+     - CPU
+     - Discontinuous Galerkin
+   * - HORSES3D
+     - 🔄 In progress
+     - CPU
+     - Discontinuous Galerkin
+

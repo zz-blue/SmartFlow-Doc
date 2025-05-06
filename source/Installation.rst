@@ -27,6 +27,11 @@ We recommend starting with a fresh virtual environment:
    python -m venv /path/to/smartflow/environment
    source /path/to/smartflow/environment/bin/activate
 
+.. note::
+
+   SmartFlow fully supports OpenMPI by default. Using other MPI implementations may require extra setup or tuning.
+
+
 .. _smartsim-and-smartredis:
 
 SmartSim and SmartRedis
@@ -46,6 +51,16 @@ interfaces for interacting with the in-memory Redis database.
 
    # Install SmartRedis Python client
    pip install smartredis
+
+.. note::
+
+   The ``--dragon`` option is not required for building SmartSim with CPU support. 
+   The following command also works:
+
+   .. code-block:: sh
+
+      smart build --device cpu
+
 
 **C, C++, and Fortran Client Libraries**
 
@@ -213,4 +228,19 @@ please refer to the `CaLES <https://github.com/CaNS-World/CaLES>`_ for installat
 - **Branch Selection**: Make sure to use the ``smartflow branch``, not the main branch.
 - **Build Configuration**: Ensure that the parameter ``PENCIL_AXIS`` is set to **3** in the ``build.conf`` file.
 
+We suggest presenting the CFD solvers coupled to SmartFlow in the following table:
 
++-------------+--------+--------+------------------+--------------------------+
+| Solver      | Status | Device | Numerical Method | Notes                    |
++=============+========+========+==================+==========================+
+| CaLES       | ✅     | CPU/GPU| Finite Difference|                          |
++-------------+--------+--------+------------------+--------------------------+
+| SOD2D       | ✅     | CPU/GPU| Spectral Element |                          |
++-------------+--------+--------+------------------+--------------------------+
+| FLEXI       | 🔄     | CPU    | Discontinuous Galerkin | In progress       |
++-------------+--------+--------+------------------+--------------------------+
+| HORSES3D    | 🔄     | CPU    | Discontinuous Galerkin | In progress       |
++-------------+--------+--------+------------------+--------------------------+
+
+✅ : Coupled  
+🔄 : In progress

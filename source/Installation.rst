@@ -54,8 +54,7 @@ interfaces for interacting with the in-memory Redis database.
 
 .. note::
 
-   The ``--dragon`` option is not required for building SmartSim with CPU support. 
-   The following command also works:
+   The ``--dragon`` option is not required essentially. The following command also works:
 
    .. code-block:: sh
 

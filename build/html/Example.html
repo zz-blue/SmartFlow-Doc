@@ -1,21 +1,21 @@
-
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Example &mdash; SmartFlow  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-      <script src="_static/jquery.js?v=5d32c60e"></script>
-      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="_static/doctools.js?v=9a2dae69"></script>
-      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -91,18 +91,18 @@
            <div itemprop="articleBody">
              
   <section id="example">
-<h1>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h1>
+<h1>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h1>
 <p>This example demonstrates how to train a reinforcement learning agent using the SmartFlow framework on a turbulent channel flow case at a friction Reynolds number of Ret = 5200.</p>
 <section id="flow-case-configuration">
-<h2>Flow Case Configuration<a class="headerlink" href="#flow-case-configuration" title="Link to this heading"></a></h2>
+<h2>Flow Case Configuration<a class="headerlink" href="#flow-case-configuration" title="Permalink to this heading"></a></h2>
 <p>The CFD solver used in this case is <a class="reference external" href="https://github.com/CaNS-World/CaLES">CaLES</a>, configured specifically for channel flow at Ret = 5200.
 For details on the CaLES case setup, please refer to the <a class="reference external" href="https://github.com/soaringxmc/SmartFlow/tree/main/examples/flow_cases">flow_cases</a> directory.</p>
 </section>
 <section id="training-configuration">
-<h2>Training Configuration<a class="headerlink" href="#training-configuration" title="Link to this heading"></a></h2>
+<h2>Training Configuration<a class="headerlink" href="#training-configuration" title="Permalink to this heading"></a></h2>
 <p>The following YAML-style settings define the training environment and parameters:</p>
 <section id="config-yaml">
-<h3>config.yaml<a class="headerlink" href="#config-yaml" title="Link to this heading"></a></h3>
+<h3>config.yaml<a class="headerlink" href="#config-yaml" title="Permalink to this heading"></a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">wandb</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;channel&quot;</span>
 <span class="w">  </span><span class="nt">run_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;train-retau-05200&quot;</span>
@@ -169,7 +169,7 @@ For details on the CaLES case setup, please refer to the <a class="reference ext
 </div>
 </section>
 <section id="train-sh">
-<h3>train.sh<a class="headerlink" href="#train-sh" title="Link to this heading"></a></h3>
+<h3>train.sh<a class="headerlink" href="#train-sh" title="Permalink to this heading"></a></h3>
 <p>Before starting the training, remove any previous logs and caches:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-r<span class="w"> </span>__pycache__<span class="w"> </span>trajectories<span class="w"> </span>envs<span class="w"> </span>tensorboard_logs<span class="w"> </span>wandb<span class="w"> </span>models/checkpoints
 </pre></div>
@@ -186,10 +186,10 @@ For details on the CaLES case setup, please refer to the <a class="reference ext
 </section>
 </section>
 <section id="evaluation-configuration">
-<h2>Evaluation Configuration<a class="headerlink" href="#evaluation-configuration" title="Link to this heading"></a></h2>
+<h2>Evaluation Configuration<a class="headerlink" href="#evaluation-configuration" title="Permalink to this heading"></a></h2>
 <p>The following settings are used for evaluating a trained policy.</p>
 <section id="id1">
-<h3>config.yaml<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<h3>config.yaml<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">wandb</span><span class="p">:</span>
 <span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;channel&quot;</span>
 <span class="nt">run_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;eval-retau-05200&quot;</span>
@@ -258,7 +258,7 @@ For details on the CaLES case setup, please refer to the <a class="reference ext
 </div>
 </section>
 <section id="eval-sh">
-<h3>eval.sh<a class="headerlink" href="#eval-sh" title="Link to this heading"></a></h3>
+<h3>eval.sh<a class="headerlink" href="#eval-sh" title="Permalink to this heading"></a></h3>
 <p>Before starting the evaluation, remove any previous logs and caches:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-r<span class="w"> </span>__pycache__<span class="w"> </span>trajectories<span class="w"> </span>envs<span class="w"> </span>tensorboard_logs<span class="w"> </span>wandb
 </pre></div>

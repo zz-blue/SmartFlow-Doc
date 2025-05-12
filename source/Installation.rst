@@ -20,12 +20,21 @@ If you plan to contribute advanced features to the framework, we recommend thoro
 `Stable-Baselines3 Documentation <https://stable-baselines3.readthedocs.io/en/master/>`_ documentation.
 
 Below is a quick installation guide for all components. Note that Python 3.9–3.11 is required for compatibility.
-We recommend starting with a fresh virtual environment:
+We recommend starting with a fresh virtual environment if your system has already installed Python packages.:
 
 .. code-block:: sh
 
    python -m venv /path/to/smartflow/environment
    source /path/to/smartflow/environment/bin/activate
+
+Also you can use anaconda to create and manage your virtual environment:
+
+.. code-block:: sh
+
+   # Create a new conda environment named "smartflow" with Python 3.10
+   conda create -n smartflow python=3.10
+   conda activate smartflow
+
 
 .. note::
 
@@ -34,7 +43,7 @@ We recommend starting with a fresh virtual environment:
 
 .. _smartsim-and-smartredis:
 
-SmartSim and SmartRedis
+1. SmartSim and SmartRedis
 ----------------------------
 
 SmartSim provides the infrastructure for launching and managing simulations, while SmartRedis provides client
@@ -137,7 +146,7 @@ If the installation is successful, you should see output similar to the followin
 
 .. _stablebaselines3:
 
-Stable-Baselines3
+2. Stable-Baselines3
 ----------------------------
 
 Stable-Baselines3 is a Python library that provides implementations of reinforcement learning algorithms.
@@ -149,10 +158,19 @@ It can be installed with the following command:
 
 .. _smartflow:
 
-SmartFlow
+3. SmartFlow
 ----------------------------
 
 We recommand to use `SmartFlow-v1.0.1 <https://github.com/soaringxmc/SmartFlow/releases/tag/v1.0.1>`_ as a stable version.
+
+To install SmartFlow, clone the repository and install the required packages:
+
+.. code-block:: sh
+
+   # Directory where you want to clone the repository
+   cd /your/local/dir/code
+   # Clone the SmartFlow repository
+   git clone https://github.com/soaringxmc/SmartFlow.git --branch=v1.0.1
 
 SmartFlow is installed with the following commands:
 
@@ -181,7 +199,7 @@ You can install them with:
 
 .. _smartredismpi:
 
-SmartRedis-MPI
+4. SmartRedis-MPI
 ----------------------------
 
 Before installing the CFD solver, build the SmartRedis-MPI library that will be linked by the MPI-based parallel CFD solver:
@@ -191,11 +209,24 @@ Before installing the CFD solver, build the SmartRedis-MPI library that will be 
    git clone https://github.com/soaringxmc/smartredis-mpi.git
    cd smartredis-mpi
 
-Edit the ``Makefile`` to set the correct paths to your SmartRedis installation:
+Edit the ``Makefile`` to set the correct settings and paths to your SmartRedis installation:
+The ``Makefile`` is located in the folder of the ``smartredis-mpi`` repository
 
 .. code-block:: sh
 
-   # Adjust the include and lib paths in the Makefile
+   vim Makefile
+   # Adjust the paths in the Makefile
+   # in line 2 set the compiler
+   COMPILER =GNU 
+
+   # In line 4 set set the precision 
+   SINGLE_PRECISION = 0 
+
+   # In line 6 set the smartredis installation path, it should be the same as the one you set in the SmartRedis installation (step 1) or the one you set in the SmartRedis-MPI installation (step 4)
+   SMARTREDIS INSTALL DIR = /your/local/dir/code/smartredis/instal1
+
+.. code-block:: sh
+   # after all your settings are done, run the following command to build the library
    make
 
 Add the library path to your environment:
@@ -208,7 +239,7 @@ Add the library path to your environment:
 
 .. _cfd-solver:
 
-CFD Solver
+5. CFD Solver
 ----------------------------
 
 The advantage of SmartFlow is that it can be easily integrated with any CFD solver. Only several lines of code

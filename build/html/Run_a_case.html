@@ -1,21 +1,21 @@
-
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Run a case &mdash; SmartFlow  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-      <script src="_static/jquery.js?v=5d32c60e"></script>
-      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="_static/doctools.js?v=9a2dae69"></script>
-      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -84,18 +84,18 @@
            <div itemprop="articleBody">
              
   <section id="run-a-case">
-<h1>Run a case<a class="headerlink" href="#run-a-case" title="Link to this heading"></a></h1>
+<h1>Run a case<a class="headerlink" href="#run-a-case" title="Permalink to this heading"></a></h1>
 <section id="tested-clusters">
-<h2>Tested Clusters<a class="headerlink" href="#tested-clusters" title="Link to this heading"></a></h2>
+<h2>Tested Clusters<a class="headerlink" href="#tested-clusters" title="Permalink to this heading"></a></h2>
 <p>SmartFlow has been tested and verified on various HPC clusters in Europe and China. The following table summarizes the hardware environment and job scheduling systems used during deployment.</p>
 <table class="docutils align-default" id="id1">
-<caption><span class="caption-text">HPC Clusters Tested with SmartFlow</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<caption><span class="caption-text">HPC Clusters Tested with SmartFlow</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
 <colgroup>
-<col style="width: 15.0%" />
-<col style="width: 25.0%" />
-<col style="width: 20.0%" />
-<col style="width: 20.0%" />
-<col style="width: 20.0%" />
+<col style="width: 15%" />
+<col style="width: 25%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Country</p></th>
@@ -128,14 +128,14 @@
 </table>
 </section>
 <section id="running-on-a-standalone-machine">
-<h2>Running on a standalone machine<a class="headerlink" href="#running-on-a-standalone-machine" title="Link to this heading"></a></h2>
+<h2>Running on a standalone machine<a class="headerlink" href="#running-on-a-standalone-machine" title="Permalink to this heading"></a></h2>
 <p>To run a case on a standalone machine, we can use:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>main.py
 </pre></div>
 </div>
 </section>
 <section id="running-with-slurm-on-a-cpu-cluster">
-<h2>Running with SLURM on a CPU cluster<a class="headerlink" href="#running-with-slurm-on-a-cpu-cluster" title="Link to this heading"></a></h2>
+<h2>Running with SLURM on a CPU cluster<a class="headerlink" href="#running-with-slurm-on-a-cpu-cluster" title="Permalink to this heading"></a></h2>
 <p>To run a case on a CPU cluster, we can use a SLURM script such as:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --time=48:00:00</span>
@@ -158,7 +158,7 @@ python<span class="w"> </span>main.py
 <p>For this setting, we allocate 2 nodes with 32 tasks per node and 1 CPU per task (for a total of 64 tasks). The job is submitted to the <code class="docutils literal notranslate"><span class="pre">qos_name</span></code> queue under the <code class="docutils literal notranslate"><span class="pre">user_account</span></code> account. The job is expected to run for 48 hours. The output and error logs are saved in the <code class="docutils literal notranslate"><span class="pre">slurm-%j.out</span></code> and <code class="docutils literal notranslate"><span class="pre">slurm-%j.err</span></code> files, respectively, where <code class="docutils literal notranslate"><span class="pre">%j</span></code> represents the job ID.</p>
 </section>
 <section id="running-with-slurm-on-a-gpu-accelerated-cluster">
-<h2>Running with SLURM on a GPU-accelerated cluster<a class="headerlink" href="#running-with-slurm-on-a-gpu-accelerated-cluster" title="Link to this heading"></a></h2>
+<h2>Running with SLURM on a GPU-accelerated cluster<a class="headerlink" href="#running-with-slurm-on-a-gpu-accelerated-cluster" title="Permalink to this heading"></a></h2>
 <p>To run a case on a GPU-accelerated cluster, we can use a SLURM script such as:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --time=48:00:00</span>

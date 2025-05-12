@@ -233,7 +233,7 @@ Add the library path to your environment:
 
 .. code-block:: sh
 
-   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/smartredis-mpi/lib
+   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/your/dir/smartredis-mpi/build/lib
    # Add this to your .bashrc or .bash_profile for persistence
 
 

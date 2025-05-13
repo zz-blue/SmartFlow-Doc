@@ -250,8 +250,23 @@ to enable its coupling with the SmartFlow framework.
 
 To use SmartFlow v1.0.1 with CaLES, please ensure you are using the compatible version: `CaLES-v2.0.0-smartflow <https://github.com/CaNS-World/CaLES/releases/tag/v2.0.0-smartflow>`_
 
+
+.. code-block:: sh
+
+   # Clone the CaLES repository smartflow branch
+   cd /your/local/dir/code
+   git clone -b smartflow https://github.com/CaNS-World/CaLES.git
+
 If you want to use CaLES as your CFD solver or simply test the workflow of the SmartFlow framework,
-please refer to the `CaLES <https://github.com/CaNS-World/CaLES>`_ for installation instructions.
+please refer to the `CaLES <https://github.com/CaNS-World/CaLES>`_ for installation instructions. After installing the CaLES solver, you shall update the dependencies as follows:
+
+.. code-block:: sh
+   
+   # your CaLES installation directory
+   cd /your/local/dir/code/CaLES
+   # update the submodules
+   git submodule update --init --recursive
+
 
 **Compilation Options**
 

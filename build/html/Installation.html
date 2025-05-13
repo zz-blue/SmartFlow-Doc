@@ -270,8 +270,19 @@ need to be added to the CFD solver to enable communication with the SmartFlow fr
 <p>As an example, we only added five lines of code to the <a class="reference external" href="https://github.com/CaNS-World/CaLES">CaLES</a> solver
 to enable its coupling with the SmartFlow framework.</p>
 <p>To use SmartFlow v1.0.1 with CaLES, please ensure you are using the compatible version: <a class="reference external" href="https://github.com/CaNS-World/CaLES/releases/tag/v2.0.0-smartflow">CaLES-v2.0.0-smartflow</a></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the CaLES repository smartflow branch</span>
+<span class="nb">cd</span><span class="w"> </span>/your/local/dir/code
+git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>smartflow<span class="w"> </span>https://github.com/CaNS-World/CaLES.git
+</pre></div>
+</div>
 <p>If you want to use CaLES as your CFD solver or simply test the workflow of the SmartFlow framework,
-please refer to the <a class="reference external" href="https://github.com/CaNS-World/CaLES">CaLES</a> for installation instructions.</p>
+please refer to the <a class="reference external" href="https://github.com/CaNS-World/CaLES">CaLES</a> for installation instructions. After installing the CaLES solver, you shall update the dependencies as follows:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># your CaLES installation directory</span>
+<span class="nb">cd</span><span class="w"> </span>/your/local/dir/code/CaLES
+<span class="c1"># update the submodules</span>
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
+</pre></div>
+</div>
 <p><strong>Compilation Options</strong></p>
 <ul class="simple">
 <li><p><strong>Branch Selection</strong>: Make sure to use the <code class="docutils literal notranslate"><span class="pre">smartflow</span> <span class="pre">branch</span></code>, not the main branch.</p></li>

@@ -130,7 +130,14 @@
 <section id="running-on-a-standalone-machine">
 <h2>Running on a standalone machine<a class="headerlink" href="#running-on-a-standalone-machine" title="Permalink to this heading"></a></h2>
 <p>To run a case on a standalone machine, we can use:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>main.py
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/your/path/SmartFlow/src/smartflow
+python<span class="w"> </span>main.py
+</pre></div>
+</div>
+<p>It should be noted that the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> file is located in the <code class="docutils literal notranslate"><span class="pre">/your/path/SmartFlow/src/smartflow/main.py</span></code> .</p>
+<p>You may encounter an error message in your current running folder <code class="docutils literal notranslate"><span class="pre">../../SmartFlow/examples/train_retau_05200/err</span></code> file. Please check the error message and fix it with your own settings. Perhaps, you may see some errors about the <code class="docutils literal notranslate"><span class="pre">wandb</span></code> as we import <code class="docutils literal notranslate"><span class="pre">wandb</span></code> library. If you see <code class="docutils literal notranslate"><span class="pre">wandb</span></code> error, please create or login <a class="reference external" href="https://wandb.ai/">wandb</a> with your own account and add API_key to the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> after the <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">wandb</span></code> as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wandb</span>
+<span class="n">wandb</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;your_api_key&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>

@@ -11,7 +11,7 @@ For details on the CaLES case setup, please refer to the `flow_cases <https://gi
 Training Configuration
 ---------------------------
 
-The following YAML-style settings define the training environment and parameters:
+The following YAML-style settings define the training environment and parameters as an example, and you may need to adjust them according to your specific requirements. In general, each case has its own configuration file, i.e., `config.yaml`, which contains the settings for the environment, runner, and other parameters.Taking the `retau_05200` case as an example, the configuration file is located in the ``/your/samrtflow/path/SmartFlow/examples/train_retau_05200`` directory. The configuration file is as follows:
 
 config.yaml
 ^^^^^^^^^^^^^^^^^^
@@ -45,7 +45,8 @@ config.yaml
       action_bounds: [-1.0, 1.0]
       reward_beta: 0.2
       case_names: ["retau_05200"]
-      executable_path: "/scratch/maochao/code/CaLES/build/cales"
+      # You may need to adjust the CaLES executable path and case folder according to your setup below:
+      executable_path: "/scratch/maochao/code/CaLES/build/cales"  # Path to the CaLES executable
       case_folder: "../flow_cases"
 
     runner:
@@ -105,7 +106,7 @@ Run the training script with the following command:
 Evaluation Configuration
 ---------------------------
 
-The following settings are used for evaluating a trained policy.
+The following settings are used for evaluating a trained policy. Similar to the training configuration, you may need to adjust them according to your specific requirements. Taking the case above as the example, the evaluation configuration file is located in the ``/your/smartflow/path/SmartFlow/examples/eval_retau_05200`` directory. The configuration file is as follows:
 
 
 config.yaml
@@ -142,6 +143,7 @@ config.yaml
     action_bounds: [-1.0, 1.0]
     reward_beta: 0.2
     case_names: ["retau_05200"]
+    # You may need to adjust the CaLES executable path according to your specific dictionary. 
     executable_path: "/scratch/maochao/code/CaLES/build/cales"
     case_folder: "../flow_cases"
 

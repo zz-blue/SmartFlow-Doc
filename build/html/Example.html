@@ -100,7 +100,7 @@ For details on the CaLES case setup, please refer to the <a class="reference ext
 </section>
 <section id="training-configuration">
 <h2>Training Configuration<a class="headerlink" href="#training-configuration" title="Permalink to this heading"></a></h2>
-<p>The following YAML-style settings define the training environment and parameters:</p>
+<p>The following YAML-style settings define the training environment and parameters as an example, and you may need to adjust them according to your specific requirements. In general, each case has its own configuration file, i.e., <cite>config.yaml</cite>, which contains the settings for the environment, runner, and other parameters.Taking the <cite>retau_05200</cite> case as an example, the configuration file is located in the <code class="docutils literal notranslate"><span class="pre">/your/samrtflow/path/SmartFlow/examples/train_retau_05200</span></code> directory. The configuration file is as follows:</p>
 <section id="config-yaml">
 <h3>config.yaml<a class="headerlink" href="#config-yaml" title="Permalink to this heading"></a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">wandb</span><span class="p">:</span>
@@ -130,7 +130,8 @@ For details on the CaLES case setup, please refer to the <a class="reference ext
 <span class="w">  </span><span class="nt">action_bounds</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="nt">reward_beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span>
 <span class="w">  </span><span class="nt">case_names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;retau_05200&quot;</span><span class="p p-Indicator">]</span>
-<span class="w">  </span><span class="nt">executable_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/scratch/maochao/code/CaLES/build/cales&quot;</span>
+<span class="w">  </span><span class="c1"># You may need to adjust the CaLES executable path and case folder according to your setup below:</span>
+<span class="w">  </span><span class="nt">executable_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/scratch/maochao/code/CaLES/build/cales&quot;</span><span class="w">  </span><span class="c1"># Path to the CaLES executable</span>
 <span class="w">  </span><span class="nt">case_folder</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;../flow_cases&quot;</span>
 
 <span class="nt">runner</span><span class="p">:</span>
@@ -187,7 +188,7 @@ For details on the CaLES case setup, please refer to the <a class="reference ext
 </section>
 <section id="evaluation-configuration">
 <h2>Evaluation Configuration<a class="headerlink" href="#evaluation-configuration" title="Permalink to this heading"></a></h2>
-<p>The following settings are used for evaluating a trained policy.</p>
+<p>The following settings are used for evaluating a trained policy. Similar to the training configuration, you may need to adjust them according to your specific requirements. Taking the case above as the example, the evaluation configuration file is located in the <code class="docutils literal notranslate"><span class="pre">/your/smartflow/path/SmartFlow/examples/eval_retau_05200</span></code> directory. The configuration file is as follows:</p>
 <section id="id1">
 <h3>config.yaml<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">wandb</span><span class="p">:</span>
@@ -219,6 +220,7 @@ For details on the CaLES case setup, please refer to the <a class="reference ext
 <span class="nt">action_bounds</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">]</span>
 <span class="nt">reward_beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span>
 <span class="nt">case_names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;retau_05200&quot;</span><span class="p p-Indicator">]</span>
+<span class="c1"># You may need to adjust the CaLES executable path according to your specific dictionary.</span>
 <span class="nt">executable_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/scratch/maochao/code/CaLES/build/cales&quot;</span>
 <span class="nt">case_folder</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;../flow_cases&quot;</span>
 

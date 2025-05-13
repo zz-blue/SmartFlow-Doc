@@ -39,13 +39,12 @@ To run a case on a standalone machine, we can use:
 
 .. code-block:: sh
 
-   cd /your/path/SmartFlow/src/smartflow
-   python main.py
+   python /your/path/SmartFlow/src/smartflow/main.py
 
 It should be noted that the ``main.py`` file is located in the ``/your/path/SmartFlow/src/smartflow/main.py`` . 
 
 
-You may encounter an error message in your current running folder ``../../SmartFlow/examples/train_retau_05200/err`` file. Please check the error message and fix it with your own settings. Perhaps, you may see some errors about the ``wandb`` as we import ``wandb`` library. If you see ``wandb`` error, please create or login `wandb <https://wandb.ai/>`_ with your own account and add API_key to the ``main.py`` after the ``import wandb`` as follows:
+You may encounter an error message in your current running folder ``../../SmartFlow/examples/train_retau_05200/err`` file. Please check the error message and fix it with your own settings. Perhaps, you may see some errors about the ``wandb`` as we import ``wandb`` library. If you see ``wandb`` error, please create or login `wandb <https://wandb.ai/>`_ with your own account and add API_key as follows:
 
 .. code-block:: python
 

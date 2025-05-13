@@ -1,6 +1,6 @@
 Example
 ====================================
-This example demonstrates how to train a reinforcement learning agent using the SmartFlow framework on a turbulent channel flow case at a friction Reynolds number of Ret = 5200.
+After the smartflow framework installation, you can couple the smartflow framework with different CFD solvers for reinforcement learning applications. This example demonstrates how to train a reinforcement learning agent using the SmartFlow framework on a turbulent channel flow case at a friction Reynolds number of Ret = 5200. The case is located in the ``/your/smartflow/path/SmartFlow/examples/train_retau_05200`` directory. The training process is based on the MlpPolicy, and the trained agent is evaluated on the same case.
 
 Flow Case Configuration
 ----------------------------

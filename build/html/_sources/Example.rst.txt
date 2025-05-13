@@ -1,6 +1,6 @@
 Example
 ====================================
-After the smartflow framework installation, you can couple the smartflow framework with different CFD solvers for reinforcement learning applications. This example demonstrates how to train a reinforcement learning agent using the SmartFlow framework on a turbulent channel flow case at a friction Reynolds number of Ret = 5200. The case is located in the ``/your/smartflow/path/SmartFlow/examples/train_retau_05200`` directory. The training process is based on the MlpPolicy, and the trained agent is evaluated on the same case.
+After the Smartflow framework installation, you can couple the Smartflow framework with different CFD solvers for reinforcement learning (RL) applications. This example demonstrates how to train a reinforcement learning agent using the SmartFlow framework on a turbulent channel flow case at a friction Reynolds number of Ret = 5200. The case is located in the ``/your/smartflow/path/SmartFlow/examples/train_retau_05200`` directory. The training process is based on the MlpPolicy, and the trained agent is evaluated on the same case.
 
 Flow Case Configuration
 ----------------------------
@@ -194,6 +194,7 @@ Run the evaluation script with the following command:
 .. code-block:: bash
 
     python -u ../../src/smartflow/main.py \
+        # You may need to adjust the path to the trained model according to your setup.
         runner.model_load_path="/scratch/maochao/code/SmartFlow/experiments/train_retau_05200/models/final/yjkxqlf3" \
         runner.steps_per_episode=3600 \
         > out 2> err

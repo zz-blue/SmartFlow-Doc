@@ -92,7 +92,7 @@
              
   <section id="example">
 <h1>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h1>
-<p>After the smartflow framework installation, you can couple the smartflow framework with different CFD solvers for reinforcement learning applications. This example demonstrates how to train a reinforcement learning agent using the SmartFlow framework on a turbulent channel flow case at a friction Reynolds number of Ret = 5200. The case is located in the <code class="docutils literal notranslate"><span class="pre">/your/smartflow/path/SmartFlow/examples/train_retau_05200</span></code> directory. The training process is based on the MlpPolicy, and the trained agent is evaluated on the same case.</p>
+<p>After the Smartflow framework installation, you can couple the Smartflow framework with different CFD solvers for reinforcement learning (RL) applications. This example demonstrates how to train a reinforcement learning agent using the SmartFlow framework on a turbulent channel flow case at a friction Reynolds number of Ret = 5200. The case is located in the <code class="docutils literal notranslate"><span class="pre">/your/smartflow/path/SmartFlow/examples/train_retau_05200</span></code> directory. The training process is based on the MlpPolicy, and the trained agent is evaluated on the same case.</p>
 <section id="flow-case-configuration">
 <h2>Flow Case Configuration<a class="headerlink" href="#flow-case-configuration" title="Permalink to this heading"></a></h2>
 <p>The CFD solver used in this case is <a class="reference external" href="https://github.com/CaNS-World/CaLES">CaLES</a>, configured specifically for channel flow at Ret = 5200.
@@ -267,6 +267,7 @@ For details on the CaLES case setup, please refer to the <a class="reference ext
 </div>
 <p>Run the evaluation script with the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-u<span class="w"> </span>../../src/smartflow/main.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="c1"># You may need to adjust the path to the trained model according to your setup.</span>
 <span class="w">    </span>runner.model_load_path<span class="o">=</span><span class="s2">&quot;/scratch/maochao/code/SmartFlow/experiments/train_retau_05200/models/final/yjkxqlf3&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>runner.steps_per_episode<span class="o">=</span><span class="m">3600</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>&gt;<span class="w"> </span>out<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>err

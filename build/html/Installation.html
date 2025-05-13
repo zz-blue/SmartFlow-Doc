@@ -283,6 +283,13 @@ please refer to the <a class="reference external" href="https://github.com/CaNS-
 git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
 </pre></div>
 </div>
+<p>After that, you can build the solver with the following command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># in your current working directory, clean all cache</span>
+make<span class="w"> </span>allclean
+<span class="c1"># build the solver</span>
+make<span class="w"> </span>libs<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>-j
+</pre></div>
+</div>
 <p><strong>Compilation Options</strong></p>
 <ul class="simple">
 <li><p><strong>Branch Selection</strong>: Make sure to use the <code class="docutils literal notranslate"><span class="pre">smartflow</span> <span class="pre">branch</span></code>, not the main branch.</p></li>

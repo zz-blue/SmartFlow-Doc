@@ -261,11 +261,20 @@ If you want to use CaLES as your CFD solver or simply test the workflow of the S
 please refer to the `CaLES <https://github.com/CaNS-World/CaLES>`_ for installation instructions. After installing the CaLES solver, you shall update the dependencies as follows:
 
 .. code-block:: sh
-   
+
    # your CaLES installation directory
    cd /your/local/dir/code/CaLES
    # update the submodules
    git submodule update --init --recursive
+
+After that, you can build the solver with the following command:
+
+.. code-block:: sh
+
+   # in your current working directory, clean all cache
+   make allclean
+   # build the solver
+   make libs && make -j 
 
 
 **Compilation Options**

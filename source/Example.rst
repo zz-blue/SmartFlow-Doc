@@ -26,14 +26,22 @@ config.yaml
       save_code: true
 
     environment:
+      # The following settings are used for the environment. You may need to adjust them according to your specific requirements.
+      # The number of CFD
       n_cfds: 2
+      # The number of agents per CFD
       agents_per_cfd: 48
+      # The number of tasks (processors) per CFD, which is the number of MPI ranks
+      # Please note it should not exceed the number of cores your server has
       tasks_per_cfd: 4
+      # Your desired state, action, and reward dimensions per your project requirements
       cfd_state_dim: 2
       cfd_action_dim: 1
       cfd_reward_dim: 2
+      # The number of agent state, action, and reward dimensions per your project requirements
       agent_state_dim: 2
       agent_action_dim: 1
+      # The number of CFD steps per agent's each action
       cfd_steps_per_action: 10
       agent_interval: 4
       neighbor_count: 0
@@ -43,7 +51,9 @@ config.yaml
       trajectory_path: "trajectories"
       cfd_dtype: "float64"
       action_bounds: [-1.0, 1.0]
+      # The reward beta value, which is used to balance the global reward and local rewards in this step
       reward_beta: 0.2
+      # The case names for the CFD case
       case_names: ["retau_05200"]
       # You may need to adjust the CaLES executable path and case folder according to your setup below:
       executable_path: "/scratch/maochao/code/CaLES/build/cales"  # Path to the CaLES executable
@@ -52,7 +62,7 @@ config.yaml
     runner:
       mode: "train"
       restart: false
-      policy: "MlpPolicy"
+      policy: "MlpPolicy" # The policy used for training agents
       reset_num_timesteps: true
       total_cfd_episodes: 3200
       steps_per_episode: 120

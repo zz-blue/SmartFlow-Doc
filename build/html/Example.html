@@ -111,14 +111,22 @@ For details on the CaLES case setup, please refer to the <a class="reference ext
 <span class="w">  </span><span class="nt">save_code</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 
 <span class="nt">environment</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># The following settings are used for the environment. You may need to adjust them according to your specific requirements.</span>
+<span class="w">  </span><span class="c1"># The number of CFD</span>
 <span class="w">  </span><span class="nt">n_cfds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="c1"># The number of agents per CFD</span>
 <span class="w">  </span><span class="nt">agents_per_cfd</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">48</span>
+<span class="w">  </span><span class="c1"># The number of tasks (processors) per CFD, which is the number of MPI ranks</span>
+<span class="w">  </span><span class="c1"># Please note it should not exceed the number of cores your server has</span>
 <span class="w">  </span><span class="nt">tasks_per_cfd</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="w">  </span><span class="c1"># Your desired state, action, and reward dimensions per your project requirements</span>
 <span class="w">  </span><span class="nt">cfd_state_dim</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 <span class="w">  </span><span class="nt">cfd_action_dim</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 <span class="w">  </span><span class="nt">cfd_reward_dim</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="c1"># The number of agent state, action, and reward dimensions per your project requirements</span>
 <span class="w">  </span><span class="nt">agent_state_dim</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 <span class="w">  </span><span class="nt">agent_action_dim</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="c1"># The number of CFD steps per agent&#39;s each action</span>
 <span class="w">  </span><span class="nt">cfd_steps_per_action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
 <span class="w">  </span><span class="nt">agent_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
 <span class="w">  </span><span class="nt">neighbor_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
@@ -128,7 +136,9 @@ For details on the CaLES case setup, please refer to the <a class="reference ext
 <span class="w">  </span><span class="nt">trajectory_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;trajectories&quot;</span>
 <span class="w">  </span><span class="nt">cfd_dtype</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;float64&quot;</span>
 <span class="w">  </span><span class="nt">action_bounds</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="c1"># The reward beta value, which is used to balance the global reward and local rewards in this step</span>
 <span class="w">  </span><span class="nt">reward_beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span>
+<span class="w">  </span><span class="c1"># The case names for the CFD case</span>
 <span class="w">  </span><span class="nt">case_names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;retau_05200&quot;</span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="c1"># You may need to adjust the CaLES executable path and case folder according to your setup below:</span>
 <span class="w">  </span><span class="nt">executable_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/scratch/maochao/code/CaLES/build/cales&quot;</span><span class="w">  </span><span class="c1"># Path to the CaLES executable</span>
@@ -137,7 +147,7 @@ For details on the CaLES case setup, please refer to the <a class="reference ext
 <span class="nt">runner</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;train&quot;</span>
 <span class="w">  </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">policy</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;MlpPolicy&quot;</span>
+<span class="w">  </span><span class="nt">policy</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;MlpPolicy&quot;</span><span class="w"> </span><span class="c1"># The policy used for training agents</span>
 <span class="w">  </span><span class="nt">reset_num_timesteps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">total_cfd_episodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3200</span>
 <span class="w">  </span><span class="nt">steps_per_episode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">120</span>

@@ -27,9 +27,9 @@ config.yaml
 
     environment:
       # The following settings are used for the environment. You may need to adjust them according to your specific requirements.
-      # The number of CFD
+      # The number of CFD running instances parallelly
       n_cfds: 2
-      # The number of agents per CFD
+      # The number of agents per CFD environment
       agents_per_cfd: 48
       # The number of tasks (processors) per CFD, which is the number of MPI ranks
       # Please note it should not exceed the number of cores your server has
@@ -41,15 +41,19 @@ config.yaml
       # The number of agent state, action, and reward dimensions per your project requirements
       agent_state_dim: 2
       agent_action_dim: 1
-      # The number of CFD steps per agent's each action
+      # The number of CFD steps between two consecutive actions
       cfd_steps_per_action: 10
+      # The number of cells between two consecutive agents in x-, y-, and z-directions
       agent_interval: 4
       neighbor_count: 0
+      # The number of polling for polling the database
       poll_time: 360000000
       verbosity: "debug"
+      # whether to save the trajectories
       save_trajectories: true
       trajectory_path: "trajectories"
       cfd_dtype: "float64"
+      # You don't need to change the action bounds unless you have a specific requirement
       action_bounds: [-1.0, 1.0]
       # The reward beta value, which is used to balance the global reward and local rewards in this step
       reward_beta: 0.2
@@ -61,12 +65,17 @@ config.yaml
 
     runner:
       mode: "train"
+      # Whether to restart the training from the last checkpoint
+      # If you want to restart the training, set it to true
       restart: false
-      policy: "MlpPolicy" # The policy used for training agents
-      reset_num_timesteps: true
-      total_cfd_episodes: 3200
+      policy: "MlpPolicy" # Action network type
+      # Whether to reset the number of timesteps for the training
+      reset_num_timesteps: false
+      total_cfd_episodes: 3200  # The total number of CFD cases
+      # The number of actions per CFD episode for each agent 
       steps_per_episode: 120
       hidden_layers: [128, 128]
+      # The learning rate for the training
       learning_rate: 5e-4
       log_interval: 1
       summary_interval: 1

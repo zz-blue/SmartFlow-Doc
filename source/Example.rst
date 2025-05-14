@@ -221,3 +221,5 @@ Run the evaluation script with the following command:
 .. note::
 
    When you run the case code, if you see something like ``Autnentication required, XXX`` in the error file, please check your operating system and ``DISPLAY`` status. You may need to set the ``DISPLAY`` environment variable to none and restart your server. 
+
+After your training and evaluation, you can check the results in the ``wandb`` directory. You can also visualize the results using TensorBoard in ``wandb`` website under your account.

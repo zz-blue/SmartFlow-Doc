@@ -57,7 +57,7 @@ interfaces for interacting with the in-memory Redis database.
    pip install smartsim
    # Build SmartSim with CPU support and Dragon
    smart build --device cpu --dragon
-
+   # If you are using HPC, you shall load cmake and pay attention to cmake verion. 
    # Install SmartRedis Python client
    pip install smartredis
 

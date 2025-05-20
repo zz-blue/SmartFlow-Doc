@@ -212,6 +212,8 @@ Before installing the CFD solver, build the SmartRedis-MPI library that will be 
 Edit the ``Makefile`` to set the correct settings and paths to your SmartRedis installation:
 The ``Makefile`` is located in the folder of the ``smartredis-mpi`` repository
 
+
+
 .. code-block:: sh
 
    vim Makefile
@@ -225,9 +227,13 @@ The ``Makefile`` is located in the folder of the ``smartredis-mpi`` repository
    # In line 6 set the smartredis installation path, it should be the same as the one you set in the SmartRedis installation (step 1) or the one you set in the SmartRedis-MPI installation (step 4)
    SMARTREDIS INSTALL DIR = /your/local/dir/code/smartredis/instal1
 
+
 .. code-block:: sh
+   
    # after all your settings are done, run the following command to build the library
+   make clean
    make
+
 
 Add the library path to your environment:
 

@@ -128,7 +128,7 @@ interfaces for interacting with the in-memory Redis database.</p>
 pip<span class="w"> </span>install<span class="w"> </span>smartsim
 <span class="c1"># Build SmartSim with CPU support and Dragon</span>
 smart<span class="w"> </span>build<span class="w"> </span>--device<span class="w"> </span>cpu<span class="w"> </span>--dragon
-
+<span class="c1"># If you are using HPC, you shall load cmake and pay attention to cmake verion.</span>
 <span class="c1"># Install SmartRedis Python client</span>
 pip<span class="w"> </span>install<span class="w"> </span>smartredis
 </pre></div>
@@ -255,6 +255,11 @@ The <code class="docutils literal notranslate"><span class="pre">Makefile</span>
 
 <span class="c1"># In line 6 set the smartredis installation path, it should be the same as the one you set in the SmartRedis installation (step 1) or the one you set in the SmartRedis-MPI installation (step 4)</span>
 SMARTREDIS<span class="w"> </span>INSTALL<span class="w"> </span><span class="nv">DIR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/your/local/dir/code/smartredis/instal1
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># after all your settings are done, run the following command to build the library</span>
+make<span class="w"> </span>clean
+make
 </pre></div>
 </div>
 <p>Add the library path to your environment:</p>

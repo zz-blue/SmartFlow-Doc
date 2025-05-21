@@ -282,6 +282,20 @@ After that, you can build the solver with the following command:
    # build the solver
    make libs && make -j 
 
+If you are installing the ``CaLES`` solver on your High Performance Computing (HPC), you should pay extra attention to the ``libs.mk`` file, which is located in the ``CaLES/configs`` directory. In ``libs.mk``, you should set the proper paths before making it as shown in the last fours lines of the document:
+
+.. code-block:: sh
+
+   # in your current CaLES working directory
+   vim configs/libs.mk
+   # set the paths
+   override LIBS += -L/path/to/your/smartredis/install/lib -lsmartredis -lsmartredis-fortran
+   override INCS += -I/path/to/your/smartredis/install/include
+
+   override LIBS += -L/path/to/your/smartredis-mpi/build/lib -lsmartredis_mpi
+   override INCS += -I/path/to/your/smartredis-mpi/build/include
+
+
 
 **Compilation Options**
 

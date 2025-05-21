@@ -295,6 +295,17 @@ make<span class="w"> </span>allclean
 make<span class="w"> </span>libs<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>-j
 </pre></div>
 </div>
+<p>If you are installing the <code class="docutils literal notranslate"><span class="pre">CaLES</span></code> solver on your High Performance Computing (HPC), you should pay extra attention to the <code class="docutils literal notranslate"><span class="pre">libs.mk</span></code> file, which is located in the <code class="docutils literal notranslate"><span class="pre">CaLES/configs</span></code> directory. In <code class="docutils literal notranslate"><span class="pre">libs.mk</span></code>, you should set the proper paths before making it as shown in the last fours lines of the document:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># in your current CaLES working directory</span>
+vim<span class="w"> </span>configs/libs.mk
+<span class="c1"># set the paths</span>
+override<span class="w"> </span><span class="nv">LIBS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-L/path/to/your/smartredis/install/lib<span class="w"> </span>-lsmartredis<span class="w"> </span>-lsmartredis-fortran
+override<span class="w"> </span><span class="nv">INCS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-I/path/to/your/smartredis/install/include
+
+override<span class="w"> </span><span class="nv">LIBS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-L/path/to/your/smartredis-mpi/build/lib<span class="w"> </span>-lsmartredis_mpi
+override<span class="w"> </span><span class="nv">INCS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-I/path/to/your/smartredis-mpi/build/include
+</pre></div>
+</div>
 <p><strong>Compilation Options</strong></p>
 <ul class="simple">
 <li><p><strong>Branch Selection</strong>: Make sure to use the <code class="docutils literal notranslate"><span class="pre">smartflow</span> <span class="pre">branch</span></code>, not the main branch.</p></li>

@@ -20,7 +20,7 @@ If you plan to contribute advanced features to the framework, we recommend thoro
 `Stable-Baselines3 Documentation <https://stable-baselines3.readthedocs.io/en/master/>`_ documentation.
 
 Below is a quick installation guide for all components. Note that Python 3.9–3.11 is required for compatibility.
-We recommend starting with a fresh virtual environment if your system has already installed Python packages.:
+We recommend starting with a fresh virtual environment if your system has already installed Python packages. For local computer users (apart from HPC using), we recommend using
 
 .. code-block:: sh
 
@@ -34,6 +34,44 @@ Also you can use anaconda to create and manage your virtual environment:
    # Create a new conda environment named "smartflow" with Python 3.10
    conda create -n smartflow python=3.10
    conda activate smartflow
+
+If you are using a High Performance Computing (HPC) system, please ensure that the Python version is compatible with the system's modules. You can check the available Python versions by running:
+
+.. code-block:: sh
+
+   module avail python
+
+You should load the following modules before installing the packages:
+
+.. code-block:: sh
+
+   module load OpenMPI/4.1.5-GCC-12.3.0
+   module load Python/3.11.3-GCCcore-12.3.0
+   module load GCCcore/12.3.0
+   module load virtualenv/20.23.1-GCCcore-12.3.0
+   module load CMake/3.26.3-GCCcore-12.3.0
+   module load GCC/12.3.0
+   module load FFTW/3.3.10-GCC-12.3.0
+
+After loading the modules, you can create a virtual environment using the following command:
+
+.. code-block:: sh
+
+   virtualenv /path/to/smartflow/environment
+   # Activate the virtual environment
+   source /path/to/smartflow/environment/bin/activate
+   # load the modules again in your current working environment
+   module load OpenMPI/4.1.5-GCC-12.3.0
+   module load Python/3.11.3-GCCcore-12.3.0
+   module load GCCcore/12.3.0
+   module load virtualenv/20.23.1-GCCcore-12.3.0
+   module load CMake/3.26.3-GCCcore-12.3.0
+   module load GCC/12.3.0
+   module load FFTW/3.3.10-GCC-12.3.0
+
+.. note::
+
+   If there are no extra notes for installing the smartflow packages in HPC, you can follow the same steps as in local computer installation.
 
 
 .. note::
@@ -57,7 +95,7 @@ interfaces for interacting with the in-memory Redis database.
    pip install smartsim
    # Build SmartSim with CPU support and Dragon
    smart build --device cpu --dragon
-   # If you are using HPC, you shall load cmake and pay attention to cmake verion. 
+   # If you are using HPC, you shall load cmake and pay attention to cmake version. 
    # Install SmartRedis Python client
    pip install smartredis
 

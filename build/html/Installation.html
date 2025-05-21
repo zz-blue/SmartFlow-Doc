@@ -104,7 +104,7 @@
 <a class="reference external" href="https://www.craylabs.org/docs/overview.html">SmartSim Documentation</a> and
 <a class="reference external" href="https://stable-baselines3.readthedocs.io/en/master/">Stable-Baselines3 Documentation</a> documentation.</p>
 <p>Below is a quick installation guide for all components. Note that Python 3.9–3.11 is required for compatibility.
-We recommend starting with a fresh virtual environment if your system has already installed Python packages.:</p>
+We recommend starting with a fresh virtual environment if your system has already installed Python packages. For local computer users (apart from HPC using), we recommend using</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>/path/to/smartflow/environment
 <span class="nb">source</span><span class="w"> </span>/path/to/smartflow/environment/bin/activate
 </pre></div>
@@ -114,6 +114,38 @@ We recommend starting with a fresh virtual environment if your system has alread
 conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>smartflow<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10
 conda<span class="w"> </span>activate<span class="w"> </span>smartflow
 </pre></div>
+</div>
+<p>If you are using a High Performance Computing (HPC) system, please ensure that the Python version is compatible with the system’s modules. You can check the available Python versions by running:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>avail<span class="w"> </span>python
+</pre></div>
+</div>
+<p>You should load the following modules before installing the packages:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>OpenMPI/4.1.5-GCC-12.3.0
+module<span class="w"> </span>load<span class="w"> </span>Python/3.11.3-GCCcore-12.3.0
+module<span class="w"> </span>load<span class="w"> </span>GCCcore/12.3.0
+module<span class="w"> </span>load<span class="w"> </span>virtualenv/20.23.1-GCCcore-12.3.0
+module<span class="w"> </span>load<span class="w"> </span>CMake/3.26.3-GCCcore-12.3.0
+module<span class="w"> </span>load<span class="w"> </span>GCC/12.3.0
+module<span class="w"> </span>load<span class="w"> </span>FFTW/3.3.10-GCC-12.3.0
+</pre></div>
+</div>
+<p>After loading the modules, you can create a virtual environment using the following command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>virtualenv<span class="w"> </span>/path/to/smartflow/environment
+<span class="c1"># Activate the virtual environment</span>
+<span class="nb">source</span><span class="w"> </span>/path/to/smartflow/environment/bin/activate
+<span class="c1"># load the modules again in your current working environment</span>
+module<span class="w"> </span>load<span class="w"> </span>OpenMPI/4.1.5-GCC-12.3.0
+module<span class="w"> </span>load<span class="w"> </span>Python/3.11.3-GCCcore-12.3.0
+module<span class="w"> </span>load<span class="w"> </span>GCCcore/12.3.0
+module<span class="w"> </span>load<span class="w"> </span>virtualenv/20.23.1-GCCcore-12.3.0
+module<span class="w"> </span>load<span class="w"> </span>CMake/3.26.3-GCCcore-12.3.0
+module<span class="w"> </span>load<span class="w"> </span>GCC/12.3.0
+module<span class="w"> </span>load<span class="w"> </span>FFTW/3.3.10-GCC-12.3.0
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If there are no extra notes for installing the smartflow packages in HPC, you can follow the same steps as in local computer installation.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -128,7 +160,7 @@ interfaces for interacting with the in-memory Redis database.</p>
 pip<span class="w"> </span>install<span class="w"> </span>smartsim
 <span class="c1"># Build SmartSim with CPU support and Dragon</span>
 smart<span class="w"> </span>build<span class="w"> </span>--device<span class="w"> </span>cpu<span class="w"> </span>--dragon
-<span class="c1"># If you are using HPC, you shall load cmake and pay attention to cmake verion.</span>
+<span class="c1"># If you are using HPC, you shall load cmake and pay attention to cmake version.</span>
 <span class="c1"># Install SmartRedis Python client</span>
 pip<span class="w"> </span>install<span class="w"> </span>smartredis
 </pre></div>
